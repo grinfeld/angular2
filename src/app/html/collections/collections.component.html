@@ -1,0 +1,9 @@
+<div *ngIf="collections && collections.length" class="collectionWrapper">
+  <div *ngFor="let c of collections">
+    <span *ngIf="user == null" class="authorName" routerLink="/authors/{{c.user.id}}">{{c.user.nickname}}</span>
+    <span class="collectionName" routerLink="/authors/{{c.user.id}}/collections/{{c.id}}" >{{c.collection_name}}</span>
+  </div>
+</div>
+<div *ngIf="!collections || !collections.length" class="collectionWrapper">
+  <div *ngIf="user">У автора нет подборок</div>
+</div>

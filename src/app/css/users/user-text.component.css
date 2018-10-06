@@ -1,0 +1,218 @@
+.textContainer {
+  display: table;
+}
+
+.editModeC.textContainer {
+  display: inline-block;
+}
+
+.editModeC.fullScreen {
+  width: calc(100% - 80px) !important;
+}
+
+.header {
+  display: table-row;
+}
+
+.author {
+  float: left;
+  display: table-cell;
+  font-size: 18px;
+  cursor: pointer;
+  color: #000000;
+}
+
+.author div {
+  margin-top: 20px;
+}
+
+.category {
+  float: right;
+  display: table-cell;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.category div {
+  margin-top: 20px;
+}
+
+.textTitle {
+  text-align: center;
+  display: table-cell;
+  font: 16px 'Playfair Display SC', serif;
+}
+
+.textTitle div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.textEpigraph {
+  float: right;
+  display: table-cell;
+  white-space:pre-wrap;
+  font-size: 12px;
+}
+
+.textEpigraph div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.textContent {
+  white-space:pre-wrap !important;
+  font: 20px 'Bad Script', cursive !important;
+  color: #000000 !important;
+  display: table-cell !important;
+}
+
+.textDate {
+  float: right;
+  display: table-cell;
+}
+
+.textDate div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+textarea.textContent {
+  min-height: 400px !important;
+  width: 100% !important;
+  top: -30px !important;
+  position: relative !important;
+}
+
+textarea.textContent.fullScreen {
+  height: calc(100% - 10px) !important;
+  width: calc(95% - 20px) !important;
+}
+
+.editTextWrapper {
+  position: inherit !important;
+}
+
+.editTextWrapper.fullScreen {
+  position: absolute !important;
+  z-index: 100 !important;
+  left: 0 !important;
+  top: 40px !important;
+  height: calc(90% - 40px) !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.openFs {
+  position: relative;
+  top: 5px;
+  background: transparent url('assets/images/fullscreenIn.png') top right no-repeat;
+  width: 30px !important;
+  height: 30px;
+  float: right;
+  cursor: pointer;
+  display:inline;
+  z-index: 101;
+}
+
+.openFs.fullScreen {
+  display:none;
+}
+
+.closeFs {
+  display: none;
+  cursor: pointer;
+}
+
+.closeFs.fullScreen {
+  position: relative;
+  left: -90px;
+  top: -25px;
+  background: transparent url('assets/images/fullscreenOut.png') top right no-repeat;
+  width: 30px !important;
+  height: 30px;
+  float: right;
+  cursor: pointer;
+  display:inline;
+  z-index: 101;
+}
+
+.fadeAllData {
+  display: none;
+}
+
+.fadeAllData.fullScreen {
+  display:block;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(195, 195, 195, 0.4) 0;
+  z-index: 99;
+}
+
+.editModeC div .clearBtnCont {
+  padding-left: 22px !important;
+}
+
+.collections {
+  background: transparent url('assets/images/booksIcon.png') left top no-repeat;
+  vertical-align: top;
+  padding-bottom: 10px;
+}
+
+.editable .collections {
+  /*display: inline;
+  width: auto;*/
+  text-align: left !important;
+}
+
+ul.collectionList {
+  display: inline !important;
+  list-style: none;
+}
+
+ul.collectionList li {
+  display: inline !important;
+  text-decoration: none;
+  color: #545454;
+  font-family: 'Neucha', cursive;
+  cursor: pointer;
+}
+
+ul.collectionList li:after {
+  content: ", ";
+}
+
+ul.collectionList li.nextLine:after {
+  content: ",\a";
+  white-space:pre;
+}
+
+.collections.editable ul.collectionList li.nextLine:after {
+  content: " ";
+}
+
+ul.collectionList li:last-child:after {
+  content: " ";
+}
+
+ul.collectionList li:hover {
+  text-decoration: underline;
+}
+
+.collections input[type="checkbox"] {
+  display: inline;
+  width: auto;
+}
+
+.collections.editable ul.collectionList li:hover {
+  text-decoration: none !important;
+}
+
+.publishDateCont {
+
+}

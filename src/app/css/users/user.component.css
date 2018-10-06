@@ -1,0 +1,152 @@
+.innerDisplay {
+  width: calc(100% - 20px);
+  height: calc(100% - 10px);
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.innerDisplay.editModeC.show {
+  display: inline-block;
+}
+
+div.userDetails {
+  width: calc(100% + 22px);
+}
+
+.innerDisplay.show {
+  display: block;
+}
+
+.innerDisplay.hidden {
+  display: none;
+}
+
+h1 {
+  font: 40px 'Cormorant Garamond', serif;
+}
+
+input, select {
+  margin-bottom: 10px;
+  font: 16px 'PT Serif', serif;
+  color: #000000;
+  padding: 8px 10px;
+  border-radius: 3px;
+  border: 1px solid #00BCD4;
+  transition: border-color 0.2s;
+}
+
+input[type="email"].ng-valid, input[type="email"].ng-invalid {
+  width: calc(100% - 130px);
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+input {
+  width: calc(100% - 126px);
+}
+
+input.nickname {
+  font-size: 20px;
+}
+
+
+select.yesno {
+  min-width: 100px !important;
+  width: 100px;
+}
+
+div.linkwrapper {
+  margin-bottom: 10px;
+  font: 16px 'PT Serif', serif;
+  padding: 8px 0;
+  border: 0;
+  transition: border-color 0.2s;
+}
+
+div.linkwrapper.upload {
+  display: inline-block;
+  border: 1px dashed #00BCD4;
+  padding: 8px 10px;
+  border-radius: 3px;
+  width: calc(100% - 126px);
+  color: #000000;
+  cursor: pointer;
+}
+
+div.linkwrapper label {
+  color: #000000;
+  cursor: pointer;
+  width: 250px;
+}
+
+div.linkwrapper a, div.linkwrapper a:link, div.linkwrapper a:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
+.imageDiv {
+  vertical-align: top;
+}
+
+.userAbout textarea {
+  margin-bottom: 10px !important;
+  font: 16px 'PT Serif', serif !important;
+  color: #000000 !important;
+  padding: 8px 10px !important;
+  border-radius: 3px !important;
+  border: 1px solid #00BCD4 !important;
+  transition: border-color 0.2s !important;
+  min-height: 200px !important;
+}
+
+div.aboutText {
+  white-space:pre-wrap;
+  font: 16px 'PT Serif', serif;
+  color: #000000;
+}
+
+.emptyIcon {
+  width: 19px !important;
+  height: 19px !important;
+  display:inline-block !important;
+}
+
+.articlesIcon {
+  background: transparent url('assets/images/articlesIcon.png') center bottom no-repeat;
+}
+
+.booksIcon {
+  background: transparent url('assets/images/booksIcon.png') center bottom no-repeat;
+}
+
+.emailIcon {
+  background: transparent url('assets/images/emailIcon.png') center center no-repeat;
+}
+
+.facebookIcon {
+  background: transparent url('assets/images/facebookIcon.png') center center no-repeat;
+}
+
+.googleIcon {
+  background: transparent url('assets/images/googleIcon.png') center center no-repeat;
+}
+
+.twitterIcon {
+  background: transparent url('assets/images/twitterIcon.png') center center no-repeat;
+}
+
+.emptyIcon a, .emptyIcon a:link, .emptyIcon a:visited {
+  display: block;
+  width: 19px;
+  height: 19px;
+}
+
+select.option {
+  font-size: 12px !important;
+}

@@ -1,0 +1,11 @@
+<div *ngFor="let user of users; let i = index;" class="authorList">
+  <div class="author">
+    <div class="authorLink"><a routerLink="{{user.id}}">{{user.nickname}}</a></div>
+    <div class="articles" title="Произведения" routerLink="{{user.id}}/texts"></div>
+    <div class="books" title="Подборки" routerLink="{{user.id}}/collections"></div>
+    <div *ngIf="auth.isAdmin() && !isAdmin(user)" class="delete" title="Удалить Автора"></div>
+  </div>
+</div>
+<div *ngIf="auth.isAdmin()" >
+  <div class="createLink" routerLink="create">Создать</div>
+</div>

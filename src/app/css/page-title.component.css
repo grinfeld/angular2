@@ -1,0 +1,15 @@
+.pageTitle {
+  font: 18px 'Russo One', sans-serif;
+  color: #000000;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.pageTitle .withLink {
+  cursor: pointer;
+}
+
+.pageTitle .withLink:hover {
+  text-decoration: underline;
+}

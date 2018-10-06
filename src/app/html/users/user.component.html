@@ -1,0 +1,57 @@
+<div [class.editModeW]="data.isEditable()"  [class.textWrapper]="data.isEditable()">
+  <div *ngIf="data.isVisible() || data.isEditable()" class="innerDisplay" [class.editModeC]="data.isEditable()" [class.hidden]="!loadService.isLoaded()" [class.show]="loadService.isLoaded()">
+    <div *ngIf="data.isEditable() && data.user.id > 0" class="articlesIcon emptyIcon" title="Произведения {{data.user.nickname}}" >
+      <a routerLink="texts"></a>
+    </div>
+    <div *ngIf="data.isEditable() && data.user.id > 0" class="booksIcon emptyIcon" title="Подборки {{data.user.nickname}}" >
+      <a routerLink="collections"></a>
+    </div>
+    <div *ngIf="!data.isEditable()">
+      <img *ngIf="data.user.details.img_url || data.user.details.image_visibility != data.config().VISIBILITY.HIDDEN" [src]="data.user.details.image" alt="" />
+      <h1>{{data.user.nickname}}</h1>
+    </div>
+    <div *ngIf="data.isEditable()">
+      <img *ngIf="data.user.details.img_url"  [src]="data.user.details.image" alt="" />
+      <input title="Ник" class="longinp nickname" id="nickName" type="text" (ngModelChange)="data.user.nickname = $event" #nickName="ngModel" [(ngModel)]="data.user.nickname" required placeholder="Ник" />
+      <div [hidden]="nickName.valid || nickName.pristine" class="alert alert-danger">Пожалуйста, заполните Ник</div>
+    </div>
+    <div *ngIf="data.isEditable()" title="Имя">
+      <input class="longinp" id="firstName" (ngModelChange)="data.user.first_name = $event" type="text" #firstName="ngModel" [(ngModel)]="data.user.first_name" required placeholder="Имя" />
+      <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">Пожалуйста, заполните Имя</div>
+    </div>
+    <div *ngIf="data.isEditable()" title="Фамилия">
+      <input class="longinp" id="lastName" type="text" (ngModelChange)="data.user.last_name = $event" #lastName="ngModel" [(ngModel)]="data.user.last_name" required placeholder="Фамилия" />
+      <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">Пожалуйста, заполните Фамилию</div>
+    </div>
+    <single-user-details [data]="data"></single-user-details>
+    <div *ngIf="auth.isAdmin() && data.isAdmin()" title="Роль">
+      <select [(ngModel)]="data.user.type" #role id="role" class="yesno">
+        <option value="" class="option_title">Роль</option>
+        <option value="{{data.config().ROLES.AUTHOR}}">Автор</option>
+        <option value="{{data.config().ROLES.ADMIN}}">Админ</option>
+      </select>
+    </div>
+    <div *ngIf="auth.isAdmin() && data.isAdmin()" title="Показывать автора на сайте">
+      <select [(ngModel)]="data.user.visibility" #visibility id="visibility" class="yesno">
+        <option value="" class="option_title">Показывать</option>
+        <option value="{{data.config().VISIBILITY.VISIBLE}}">Да</option>
+        <option value="{{data.config().VISIBILITY.HIDDEN}}">Нет</option>
+      </select>
+    </div>
+    <div class="userAbout">
+      <div *ngIf="data.isEditable()" title="Об Авторе">
+        <textarea #userAbout [(ngModel)]="data.user.about" placeholder="Об Авторе">{{data.user.about}}</textarea>
+      </div>
+      <div *ngIf="!data.isEditable()" title="Об Авторе" class="aboutText">
+        {{data.user.about}}
+      </div>
+    </div>
+    <div *ngIf="data.isEditable()" title="Изменить пароль">
+      <div class="linkwrapper"><a href="">Изменить пароль</a></div>
+    </div>
+    <div *ngIf="data.isEditable()">
+      <div class="formButtons clearBtnCont"><button (click)="resetAuthorForm()" class="white">Очистить</button> </div>
+      <div class="formButtons submitBtnCont"><input class="btn" type="submit" value="Сохранить"/></div>
+    </div>
+  </div>
+</div>

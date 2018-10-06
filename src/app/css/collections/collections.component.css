@@ -1,0 +1,27 @@
+.collectionWrapper {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.collectionName {
+  cursor: pointer;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.collectionName:hover {
+  text-decoration: underline;
+}
+
+.authorName {
+  font-size: 18px;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  overflow-y: hidden;
+  color: #000000;
+}

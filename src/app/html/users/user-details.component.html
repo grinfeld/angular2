@@ -1,0 +1,59 @@
+<div class="userDetails">
+  <div *ngIf="!data.isEditable()" class="articlesIcon emptyIcon" title="Произведения {{data.user.nickname}}" >
+    <a routerLink="texts"></a>
+  </div>
+  <div *ngIf="!data.isEditable()" class="booksIcon emptyIcon" title="Подборки {{data.user.nickname}}" >
+    <a routerLink="collections"></a>
+  </div>
+  <div title="Эл. Почта  {{data.user.nickname}}" *ngIf="!data.isEditable() && isEmailVisible()" class="emailIcon emptyIcon">
+    <a href="mailto:{{getDetails().email}}" target="_blank"></a>
+  </div>
+  <div title="Страница {{data.user.nickname}} на Фэйсбук" *ngIf="!data.isEditable() && isFacebookVisible()" class="facebookIcon emptyIcon">
+    <a href="{{getDetails().facebook_url}}" target="_blank"></a>
+  </div>
+  <div title="Страница {{data.user.nickname}} на Google+" *ngIf="!data.isEditable() && isGoogleVisible()" class="googleIcon emptyIcon">
+    <a href="{{getDetails().google_url}}" target="_blank"></a>
+  </div>
+  <div title="Страница {{data.user.nickname}} на Твиттер" *ngIf="!data.isEditable() && isTwitterVisible()" class="twitterIcon emptyIcon">
+    <a href="{{getDetails().twitter_url}}" target="_blank"></a>
+  </div>
+
+  <div *ngIf="data.isEditable()">
+    <select title="Показывать на сайте адрес эл. почты" [(ngModel)]="data.user.details.email_visibility" #role id="email_visibility" class="yesno">
+      <option value="{{data.config().VISIBILITY.HIDDEN}}">Скрыть</option>
+      <option value="{{data.config().VISIBILITY.VISIBLE}}">Показать</option>
+    </select>
+    <input title="Эл. Почта" id="email" type="email" #email="ngModel" [(ngModel)]="data.user.details.email" (ngModelChange)="data.user.details.email = $event" required placeholder="Эл. Почта" />
+    <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Пожалуйста, заполните адрес эл. Почты</div>
+  </div>
+  <div *ngIf="data.isEditable()">
+    <select title="Показывать на сайте ссылку на Facebook" [(ngModel)]="data.user.details.facebook_visibility" #role id="facebook_visibility" class="yesno">
+      <option value="{{data.config().VISIBILITY.HIDDEN}}">Скрыть</option>
+      <option value="{{data.config().VISIBILITY.VISIBLE}}">Показать</option>
+    </select>
+    <input title="Facebook" id="facebook_url" type="text" #facebookUrl [(ngModel)]="data.user.details.facebook_url"  placeholder="Facebook" />
+  </div>
+  <div *ngIf="data.isEditable()">
+    <select title="Показывать на сайте ссылку на Google+" [(ngModel)]="data.user.details.google_visibility" #role id="google_visibility" class="yesno">
+      <option value="{{data.config().VISIBILITY.HIDDEN}}">Скрыть</option>
+      <option value="{{data.config().VISIBILITY.VISIBLE}}">Показать</option>
+    </select>
+    <input title="Google+" id="google_url" type="text" #googleUrl [(ngModel)]="data.user.details.google_url"  placeholder="Google+" />
+  </div>
+  <div *ngIf="data.isEditable()">
+    <select title="Показывать на сайте ссылку на Twitter" [(ngModel)]="data.user.details.twitter_visibility" #role id="twitter_visibility" class="yesno">
+      <option value="{{data.config().VISIBILITY.HIDDEN}}">Скрыть</option>
+      <option value="{{data.config().VISIBILITY.VISIBLE}}">Показать</option>
+    </select>
+    <input title="Twitter" id="twitter_url" type="text" #twitterUrl [(ngModel)]="data.user.details.twitter_url"  placeholder="Twitter" />
+  </div>
+  <div *ngIf="data.isEditable()" class="imageDiv">
+    <select title="Показывать на фотографию автора" [(ngModel)]="data.user.details.image_visibility" #imageVisibility id="image_visibility" class="yesno">
+      <option value="{{data.config().VISIBILITY.HIDDEN}}">Скрыть</option>
+      <option value="{{data.config().VISIBILITY.VISIBLE}}">Показать</option>
+    </select>
+    <div class="linkwrapper upload">
+      <label title="{{data.user.details.image||'Загрузить Фото Автора'}}">Загрузить Фото Автора</label>
+    </div>
+  </div>
+</div>

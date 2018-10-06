@@ -1,0 +1,65 @@
+.authorList {
+  width: calc(100% - 20px);
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.author {
+  font-size: 20px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+
+.author a, .author a:link, .author a:visited {
+  color: #6e7174;
+  text-decoration: none;
+}
+
+.author a:hover {
+  color: #9a9da0;
+}
+
+div.authorLink {
+  vertical-align: top;
+  display: inline-block;
+  height: 23px;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div.delete {
+  width: 23px;
+  height: 23px;
+  background: transparent url('assets/images/deleteIcon.png') center bottom no-repeat;
+  display: inline-block;
+  cursor: pointer;
+}
+
+div.delete:hover {
+  background: transparent url('assets/images/deleteIconHover.png') center bottom no-repeat;
+}
+
+div.articles {
+  width: 23px;
+  height: 23px;
+  background: transparent url('assets/images/articlesIcon.png') center bottom no-repeat;
+  display: inline-block;
+  cursor: pointer;
+}
+
+div.articles:hover {
+  background: transparent url('assets/images/articlesIconHover.png') center bottom no-repeat;
+}
+
+div.books {
+  width: 23px;
+  height: 23px;
+  background: transparent url('assets/images/booksIcon.png') center bottom no-repeat;
+  display: inline-block;
+  cursor: pointer;
+}
+
+div.books:hover {
+  background: transparent url('assets/images/booksIconHover.png') center bottom no-repeat;
+}

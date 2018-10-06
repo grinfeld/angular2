@@ -1,0 +1,53 @@
+div.header {
+  display: block;
+  background-color: #004359;
+  border-bottom: 1px solid #004359;
+  box-shadow: 3px 3px 3px #006d8a;
+  height: 37px;
+  width: 100%;
+}
+
+div.title {
+  display:inline-block;
+  font: 22px 'Bad Script', cursive;
+  /*margin-top: 5px;
+  margin-bottom: 5px;*/
+  margin-left: 5px;
+  padding: 0;
+  color: #ffffff;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+div.article {
+  display: block;
+  background-color: #ffffff;
+  width: 100%;
+  min-height: calc(100% - 70px);
+  top: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid transparent;
+}
+
+div.footer {
+  display: block;
+  width: 100%;
+  height: 30px;
+  background-color: #004359;
+}
+
+.fade {
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left:0;
+  display: none;
+  height: calc(100vh - 10px);
+  width: calc(100vw - 10px);
+  background: rgba(195, 195, 195, 0.4) 0;
+}
+
+.fade.show {
+  display:block;
+}

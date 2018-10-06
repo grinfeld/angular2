@@ -1,0 +1,18 @@
+<div class="loginWrapperTable">
+  <div class="loginWrapperCell">
+    <div class="loginWindow">
+      <h1>Вход</h1>
+      <form role="form" (submit)="login(username.value, password.value)">
+        <div class="form-group">
+          <input type="text" class="form-control" #username placeholder="Имя пользователя"/>
+        </div>
+        <div class="form-group">
+          <input type="password" #password placeholder="Пароль"/>
+        </div>
+        <div class="form-submit">
+          <input type="submit" value="Войти"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

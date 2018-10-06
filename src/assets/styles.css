@@ -1,0 +1,56 @@
+/* ------- calendar ------------ */
+
+.mydp {
+  float: right;
+  margin-bottom: 10px;
+  border: 1px solid #00BCD4 !important;
+  transition: border-color 0.2s;
+  margin-right: -22px;
+}
+
+.mydp .btnpicker, .mydp .btnclear {
+  border-left: 1px solid #00BCD4 !important;
+  transition: border-color 0.2s;
+}
+
+.mydp .selector {
+  width: 272px !important;
+  background-color: #FFF !important;
+}
+
+.mydp .header, .mydp .caltable tbody {
+  border: 0 !important;
+}
+
+.mydp, .mydp .selector, .mydp .headertodaybtn, .mydp .monthinput, .mydp .yearinput {
+  border: 1px solid #00BCD4 !important;
+}
+
+.mydp .currmonth {
+  background-color: #FFF !important;
+}
+
+.mydp td .currmonth:hover {
+  background-color: #00BCD4 !important;
+}
+
+.mydp .caltable, .mydp .caltable th, .mydp .caltable td {
+  border-collapse: separate !important;
+}
+
+.mydp .btnclear {
+  display: none !important;
+}
+
+.mydp .selection {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.mydp .caltable th {
+  background-color: #f6f6f6 !important;
+}
+
+/* ------- calendar ------------ */

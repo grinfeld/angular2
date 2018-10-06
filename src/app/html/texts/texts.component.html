@@ -1,0 +1,10 @@
+  <div *ngIf="texts" class="textsWrapper">
+    <div *ngFor="let text of texts">
+      <span *ngIf="user == null" class="authorName" routerLink="/authors/{{text.author.id}}">{{text.author.nickname}}</span>
+      <span class="textName" routerLink="/authors/{{text.author.id}}/texts/{{text.id}}" >{{text.name}}</span>
+      <div *ngIf="auth.isAdmin() && !isAdmin(text.author)" routerLink="/authors/delete/{{text.author.id}}" class="delete" title="Удалить Текст"></div>
+    </div>
+    <div *ngIf="user && (auth.isAdmin() || isAuthor())">
+      <div class="createLink" (click)="createText()">Создать</div>
+    </div>
+  </div>

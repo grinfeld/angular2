@@ -1,0 +1,95 @@
+div.upmenu {
+  display: inline-block;
+  float: right;
+  width: 36px;
+  height: 100%;
+  margin-right: 0;
+}
+
+div.loggedIn {
+  float: right;
+  color: white;
+  height: 100%;
+  vertical-align: middle;
+}
+
+div.loggedIn.hidden {
+  display: none;
+}
+
+div.loggedIn div {
+  margin-right: 20px;
+  font-size: 30px;
+  height: 100%;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+div.upmenu div.menuIcon {
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  background: transparent url('assets/images/menu_white.png') center center no-repeat;
+  cursor: pointer;
+}
+
+div.upmenu div.menuIcon.hidden {
+  display: none;
+}
+
+div.upmenu div.menuIcon:hover {
+  background-image: url('assets/images/menu.png');
+}
+
+div.upmenu div.upmenu_list {
+  position: absolute;
+  top: 0;
+  display: none;
+  vertical-align: middle;
+  width: 25%;
+  z-index: 999999;
+  background: rgba(0,0,0,0.4) 0;
+  right: -25%;
+  height: 100%;
+  cursor: auto;
+  overflow: hidden;
+}
+
+div.upmenu div.upmenu_list.opened {
+  margin: 0;
+  padding:0;
+  display: block;
+  right: 0;
+  overflow: visible;
+  /*
+  animation: slide 0.8s forwards;
+  animation-delay: 0.3s;
+  */
+  transition: 1s;
+}
+
+.closeBtn {
+  cursor: pointer;
+  font: 14px Arial, Helvetica, sans-serif !important;
+  letter-spacing: 5px;
+  color: #ffffff !important;
+  margin-top: 10px;
+  margin-bottom: 13px !important;
+}
+
+div.upmenu div.upmenu_list div {
+  padding-left: 10px;
+  padding-right: 10px;
+  font: 24px Arial, Helvetica, sans-serif;
+  margin-bottom: 3px;
+}
+
+div.upmenu div.upmenu_list div a, div.upmenu div.upmenu_list div a:link, div.upmenu div.upmenu_list div a:visited {
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+div.upmenu div.upmenu_list div a:hover {
+  color: #eaeaea;
+}

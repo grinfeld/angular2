@@ -1,0 +1,79 @@
+<div class="textWrapper" *ngIf="text" [class.editModeW]="data.isEditable()">
+  <div class="textContainer" [class.editModeC]="data.isEditable()" [class.fullScreen]="fullscreen">
+    <div *ngIf="!data.isEditable()" class="header">
+      <div class="author" routerLink="/authors/{{text.author.id}}">
+        <div>{{text.author.nickname}}</div>
+      </div>
+      <div class="category" routerLink="/texts/categories/{{text.category.id}}">
+        <div>{{text.category.category_name}}</div>
+      </div>
+    </div>
+    <div *ngIf="!data.isEditable() && text.name" class="header">
+      <div class="textTitle">
+        <div>{{text.name}}</div>
+      </div>
+    </div>
+    <div *ngIf="!data.isEditable() && text.name == ''" class="header">
+      <div class="textTitle">
+        <div>Без названия</div>
+      </div>
+    </div>
+    <div *ngIf="!data.isEditable() && text.epigraph" class="header">
+      <div class="textEpigraph">
+        <div>{{text.epigraph}}</div>
+      </div>
+    </div>
+    <div *ngIf="!data.isEditable()" class="header">
+      <div class="textContent">{{text.text.trim()}}</div>
+    </div>
+    <div *ngIf="!data.isEditable()" class="header">
+      <div class="textDate">
+        <div>{{text.text_date}}</div>
+      </div>
+    </div>
+    <div class="collections" *ngIf="!data.isEditable() && text.collections && text.collections.length > 0">
+      <ul class="collectionList">
+        <li *ngFor="let c of text.collections; let i = index;" routerLink="/authors/{{text.author.id}}/collections/{{c.id}}" [class.nextLine]="(i+1)%3 == 0">{{c.collection_name}}</li>
+      </ul>
+    </div>
+    <div *ngIf="data.isEditable()" class="publishDateCont" title="Дата Публикации">
+        <my-date-picker [selDate]="getTextDate()" [options]="calendarOptions()"></my-date-picker>
+    </div>
+    <div *ngIf="data.isEditable()" title="Жанр">
+      <select (ngModelChange)="text.category.id = $event" #category="ngModel" [(ngModel)]="text.category.id" id="category" required>
+          <option *ngFor="let category of allCategories" value="{{category.id}}">{{category.category_name}}</option>
+      </select>
+      <div [hidden]="category.valid || category.pristine" class="alert alert-danger">Пожалуйста, выбирите жанр</div>
+    </div>
+    <div *ngIf="data.isEditable()" title="Название">
+      <input (ngModelChange)="text.name = $event" id="textName" type="text" #textName="ngModel" [(ngModel)]="text.name" placeholder="Название" required />
+      <div [hidden]="textName.valid || textName.pristine" class="alert alert-danger">Пожалуйста, заполните название произведения</div>
+    </div>
+    <div *ngIf="data.isEditable()" title="Эпиграф">
+      <textarea (ngModelChange)="text.epigraph = $event" id="textEpigraph" #textEpigraph [(ngModel)]="text.epigraph"
+                placeholder="Эпиграф">{{text.epigraph}}</textarea>
+    </div>
+    <div *ngIf="data.isEditable()" title="Дата">
+      <input (ngModelChange)="text.text_date = $event" id="textDate" type="text" #textDate [(ngModel)]="text.text_date" placeholder="Дата"/>
+    </div>
+    <div *ngIf="data.isEditable()" title="Текст" class="editTextWrapper" [class.fullScreen]="fullscreen">
+      <div class="openFs" (click)="openFullScreen()" [class.fullScreen]="fullscreen" title="Полный экран"></div>
+      <textarea (ngModelChange)="text.text = $event" class="textContent" id="textText" #textText [(ngModel)]="text.text" [class.fullScreen]="fullscreen" placeholder="Текст">{{text.text}}</textarea>
+      <div class="closeFs" (click)="closeFullScreen()" [class.fullScreen]="fullscreen"></div>
+    </div>
+    <div class="editable" *ngIf="allCollections && allCollections.length > 0 && data.isEditable()">
+      <div class="collections">
+        <ul class="collectionList">
+          <li *ngFor="let c of allCollections; let i = index;" [class.nextLine]="(i+1)%5 == 0">
+            <label><input #coll (click)="chooseCollection(coll.checked, c.id)" type="checkbox" [checked]="isCategoryChecked(c.id)" id="coll_{{c.id}}" value="{{c.id}}" />{{c.collection_name}}</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div *ngIf="data.isEditable()">
+      <div class="formButtons clearBtnCont"><button (click)="resetTextForm()" class="white">Очистить</button> </div>
+      <div class="formButtons submitBtnCont"><input class="btn" type="submit" value="Сохранить"/></div>
+    </div>
+  </div>
+</div>
+<div class="fadeAllData" [class.fullScreen]="fullscreen" (click)="closeFullScreen()"></div>

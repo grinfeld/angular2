@@ -1,0 +1,14 @@
+<div class="mainScreen">
+  <div class="header">
+    <div class="title" routerLink="/home" (click)="anyClick()">{{title}}</div>
+    <menu-list></menu-list>
+  </div>
+  <div class="article" (click)="anyClick()">
+    <page-title></page-title>
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="footer" (click)="anyClick()"></div>
+  <div class="statusMsg" (click)="anyClick()"><div class="statusText"></div></div>
+  <div class="fade" [class.show]="!loaded"><div class="fadeText"></div></div>
+</div>

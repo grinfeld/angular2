@@ -1,0 +1,10 @@
+<div class="upmenu">
+  <div class="menuIcon" (click)="openMenu($event)" [class.hidden]="menuOpened"></div>
+  <div *ngIf="menus" class="upmenu_list" [class.opened]="menuOpened">
+    <div (click)="closeMenu()" class="closeBtn">X Close</div>
+      <div *ngFor="let menu of menus">
+        <a *ngIf="menu" (click)="gotoMenu(menu)">{{menu.name}}</a>
+      </div>
+  </div>
+</div>
+<div class="loggedIn" *ngIf="authService.isLoggedIn()" [class.hidden]="menuOpened"><div routerLink="/profile">{{authService.user.nickname}}</div></div>

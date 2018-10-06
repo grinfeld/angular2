@@ -1,0 +1,60 @@
+.loginWrapperTable {
+  width:100%;
+  height: calc(100vh - 90px);
+  text-align: center;
+  vertical-align: middle;
+  display: table;
+}
+
+.loginWrapperCell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.loginWindow {
+  margin-left: calc(50% - 160px);
+  height: 280px;
+  width: 300px;
+  border: 1px solid #5e5e5e;
+  box-shadow: 1px 1px 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  z-index: 100;
+}
+
+.loginWindow h1 {
+  color: #525558;
+  margin-bottom: 20px;
+}
+
+.loginWindow .form-group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.loginWindow input {
+  font-size: 18px;
+  padding: 8px 10px;
+  width: 250px;
+  resize: none;
+  border-radius: 3px;
+  transition: border-color 0.2s;
+}
+
+.loginWindow input[type="text"], .loginWindow input[type="password"] {
+  color: #525558;
+  border: 1px solid rgba(185,193,199,0.5);
+}
+
+.loginWindow .form-submit {
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.loginWindow input[type="submit"] {
+  width: 272px;
+}
